@@ -15,7 +15,7 @@ connectDb();
 const app = express();
 
 app.use(cors({
-  origin:"https://ai-interview-platform-73lg.onrender.com",
+  origin:"https://ai-interview-platform-client.onrender.com",
   credentials:true
 }))
 
