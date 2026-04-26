@@ -15,7 +15,7 @@ connectDb();
 const app = express();
 
 app.use(cors({
-  origin:" http://localhost:5173",
+  origin:"https://ai-interview-platform-73lg.onrender.com",
   credentials:true
 }))
 
