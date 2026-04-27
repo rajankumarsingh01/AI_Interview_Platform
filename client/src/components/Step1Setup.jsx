@@ -518,15 +518,18 @@ const Step1Setup = ({ onStart }) => {
                     {resumeFile ? resumeFile.name : "Upload your resume (PDF only)"}
                   </p>
 
-                  {resumeFile && (
-                    <motion.button
-                      onClick={handleUploadResume}
-                      whileHover={{ scale: 1.05 }}
-                      className='mt-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-6 py-2 rounded-full shadow-lg'
-                    >
-                      {analyzing ? "Analyzing..." : "Analyse Resume"}
-                    </motion.button>
-                  )}
+             {resumeFile && (
+  <motion.button
+    onClick={(e) => {
+      e.stopPropagation();   // ✅ FIX ADDED
+      handleUploadResume();
+    }}
+    whileHover={{ scale: 1.05 }}
+    className='mt-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-6 py-2 rounded-full shadow-lg'
+  >
+    {analyzing ? "Analyzing..." : "Analyse Resume"}
+  </motion.button>
+)}
 
                 </div>
               </motion.div>
